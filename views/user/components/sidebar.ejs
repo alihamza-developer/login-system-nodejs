@@ -1,0 +1,42 @@
+<div class="sidebar">
+    <div class="user-info text-center">
+        <div class="user-image-container">
+            <img src="../images/users/<%- LOGGED_IN_USER.image -%>" alt="user image" class="user-img">
+        </div>
+        <div>
+            <p class="user-name"><%- LOGGED_IN_USER.name -%></p>
+        </div>
+    </div>
+    <ul class="nav">
+        <li class="nav-item">
+            <a href="dashboard" class="nav-link">
+                <i class="fas fa-th-large"></i>
+                <span class="text">Dashboard</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="setting" class="nav-link">
+                <i class="fas fa-cog"></i>
+                <span class="text">Profile Setting</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<nav class="navbar">
+    <a class="logo page-name" href="dashboard">
+        User Dashboard
+    </a>
+    <div class="menu">
+        <div class="dropdown">
+            <button class="dropdown-toggle menu-item no-arrow-icon" type="button" data-toggle="dropdown">
+                <img src="../images/users/<%- LOGGED_IN_USER.image -%>" alt="user-img" class="user-img">
+            </button>
+            <div class="dropdown-menu">
+                <% if(IS_ADMIN){ %>
+                    <a href="../admin/login" class="dropdown-item"><i class="fas fa-user-cog"></i> Admin Dashboard</a>
+                    <% } %>
+                        <a href="../logout" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </div>
+    </div>
+</nav>

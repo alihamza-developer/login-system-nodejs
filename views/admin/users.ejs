@@ -1,0 +1,63 @@
+<% pageName='Dashboard' ; %>
+    <%- include('../includes/head.ejs') -%>
+        <%- include('./components/sidebar.ejs') -%>
+
+            <div class="all-content">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="pull-away">
+                            <p>Recently Registered Users</p>
+                        </div>
+                    </div>
+
+
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <td>#</td>
+                                        <td>User</td>
+                                        <td>Join Date</td>
+                                        <td>Status</td>
+                                        <td>Action</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <% if(users){ let count=1; users.forEach((user,index)=>{
+                                        let verified = user.verify_status;
+                                        %>
+                                        <tr>
+                                            <td><%- count -%></td>
+                                            <td><%- user.name -%></td>
+                                            <td> <%- user.date_added -%> </td>
+                                            <td>
+
+                                                <span
+                                                    class="text-white p-1 bold small-font bg-<%- verified ? 'success':'danger' -%>"><%-
+                                                        verified?'Verified':'unverified' -%></span>
+                                            </td>
+                                            <td class="d-flex">
+
+
+                                                <input type="checkbox" name="status"
+                                                    class="fancy-checkbox jx-req-element" data-target="verify-user"
+                                                    data-submit='{"uid":"<%- user.uid -%>"}' <%- verified?'checked':''
+                                                    -%>>
+
+                                                <button class="no-btn-styles delete-btn cp"
+                                                    data-target="<%- user.id -%>" data-action="user"><%-
+                                                        svgIcon("trash-alt", 18, 'red' ) -%></button>
+
+                                            </td>
+                                        </tr>
+
+                                        <% count++; }) } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%- include('../includes/foot.ejs') -%>

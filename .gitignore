@@ -1,0 +1,18 @@
+# Node modules
+/node_modules/
+/node_modules/*
+/package-lock.json
+
+
+# Uploads
+/public/images/uploads
+
+
+# users
+/public/images/users/*
+!/public/images/users/.gitKeep
+!/public/images/users/avatar.png
+
+
+# ENV
+.env

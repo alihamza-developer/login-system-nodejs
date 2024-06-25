@@ -1,0 +1,18 @@
+<script src="/js/Libraries/jquery.min.js"></script>
+<script src="/js/Libraries/popper.min.js"></script>
+<script src="/js/Libraries/bootstrap.min.js"></script>
+<script src="/js/Libraries/sweetalert.min.js"></script>
+<script src="/js/Functions/index.js"></script>
+<script src="/js/Functions/functions.js"></script>
+<script src="/js/Functions/prototype.fn.js"></script>
+<script src="/js/Functions/jquery.fns.js"></script>
+<script src="/js/Functions/forms.js"></script>
+
+<% if(JS_FILES.length> 0){ %>
+    <% JS_FILES.forEach(function(jsFile){ %>
+        <script src="<%= jsFile %>"></script>
+        <% }); %>
+            <% } %>
+                </body>
+
+                </html>

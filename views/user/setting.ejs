@@ -1,0 +1,82 @@
+<% pageName='Setting' ; JS_FILES=['../user/js/script.js']; %>
+    <%- include('../includes/head.ejs') -%>
+        <%- include('./components/sidebar.ejs') -%>
+            <div class="all-content">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="heading">Personal Information</h3>
+                        <form action="personal-information" method="POST" class="ajax_form">
+                            <div class="row mt-4">
+                                <div class="col-md-12">
+                                    <div class="justify-center">
+                                        <div class="avatar-upload">
+                                            <div class="avatar-preview h-100">
+                                                <img src="../images/users/<%- LOGGED_IN_USER.image -%>" alt="avatar"
+                                                    class="img-fluid avatar-img-preivew">
+                                            </div>
+                                            <label class="avatar-upload-overlay">
+                                                <input type='file' class="d-none avatar-upload-input file-preview-input"
+                                                    name="avatar" accept="image/*" data-target=".avatar-img-preivew" />
+                                                <%- svgIcon('camera',60) -%>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <span class="label">First Name</span>
+                                        <input type="text" class="form-control" name="fname"
+                                            value="<%- LOGGED_IN_USER.fname -%>" required data-length="[1,250]">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <span class="label">Last Name</span>
+                                        <input type="text" class="form-control" name="lname"
+                                            value="<%- LOGGED_IN_USER.lname -%>" required data-length="[1,250]">
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-2">
+                                    <button class="btn" type="submit"><i class="fas fa-save"></i> Save</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <h3 class="heading">Change Password</h3>
+                        <form action="change-password" method="POST" class="ajax_form reset">
+                            <div class="row mt-4">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <span class="label">Current Password</span>
+                                        <input type="password" class="form-control" name="current_password" required
+                                            data-length="[1,20]">
+                                    </div>
+                                </div>
+                                <div class="col-md-6"></div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <span class="label">New Password</span>
+                                        <input type="password" class="form-control u_password" name="new_password"
+                                            required data-length="[1,20]">
+                                    </div>
+                                </div>
+                                <div class="col-md-6"></div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <span class="label">Confirm Password</span>
+                                        <input type="password" class="form-control u_password" name="confirm_password"
+                                            required data-length="[1,20]">
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-2">
+                                    <button class="btn" type="submit">Change</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <%- include('../includes/foot.ejs') -%>

@@ -1,0 +1,47 @@
+<div class="sidebar">
+    <div class="user-info text-center">
+        <div class="user-image-container">
+            <img src="../images/users/<%- LOGGED_IN_USER.image -%>" alt="user image" class="user-img">
+        </div>
+        <div>
+            <p class="user-name"><%- LOGGED_IN_USER.name -%></p>
+        </div>
+    </div>
+    <ul class="nav">
+        <li class="nav-item">
+            <a href="dashboard" class="nav-link">
+                <i class="fas fa-th-large"></i>
+                <span class="text">Dashboard</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="users" class="nav-link">
+                <i class="fas fa-users"></i>
+                <span class="text">Users</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="../user/setting" class="nav-link" target="_blank">
+                <i class="fas fa-cog"></i>
+                <span class="text">Profile Setting
+                    <i class="fas fa-external-link-alt ml-1" style="font-size: 13px"></i>
+                </span>
+            </a>
+        </li>
+    </ul>
+</div>
+<nav class="navbar">
+    <a class="logo page-name" href="dashboard">
+        User Dashboard
+    </a>
+    <div class="menu">
+        <div class="dropdown">
+            <button class="dropdown-toggle menu-item no-arrow-icon" type="button" data-toggle="dropdown">
+                <img src="../images/users/<%- LOGGED_IN_USER.image -%>" alt="user-img" class="user-img">
+            </button>
+            <div class="dropdown-menu">
+                <a href="../logout" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </div>
+    </div>
+</nav>
